@@ -15,7 +15,7 @@ export default function Home() {
 
   const searchMovies = async (searchQuery) => {
     try {
-      const response = await axios.get(`http://www.omdbapi.com/?s=${searchQuery}&apikey=c97d377d`);
+      const response = await axios.get(`https://www.omdbapi.com/?s=${searchQuery}&apikey=c97d377d`);
       if (response.data.Search) {
         setMovies(response.data.Search);
       } else {
@@ -30,7 +30,7 @@ export default function Home() {
 
   const handleMovieSelect = async (imdbID) => {
     try {
-      const response = await axios.get(`http://www.omdbapi.com/?i=${imdbID}&apikey=c97d377d`);
+      const response = await axios.get(`https://www.omdbapi.com/?i=${imdbID}&apikey=c97d377d`);
       setSelectedMovie(response.data);
     } catch (error) {
       console.error(error);
